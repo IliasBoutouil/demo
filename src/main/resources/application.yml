@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: book-service
+  datasource:
+    url: jdbc:h2:mem:books-db
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+
+springdoc:
+  swagger-ui:
+    path: /docs
+server:
+  port: 8081
+
+keycloak:
+  realm: book-shop
+  resource: book-service
+  bearer-only: true
+  auth-server-url: http://localhost:8080
+  ssl-required: none
