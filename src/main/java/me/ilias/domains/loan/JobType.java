@@ -19,4 +19,5 @@ public class JobType {
     private String code;
     @Column(name="label_fr")
     private String labelFr;
+    private boolean hidden;
 }

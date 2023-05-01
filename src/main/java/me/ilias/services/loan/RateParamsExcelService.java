@@ -85,8 +85,9 @@ public class RateParamsExcelService implements RateParamsService {
                String jobLabel = labelCell.getStringCellValue();
                if(!jobs.containsKey(jobLabel) )
                {
+                   boolean hidden = getCellByName(row, "hidden").getStringCellValue().equals("OUI");
                    //todo : solve duplicated jobs labels ( id is auto increment) : by unique or db check
-                   JobType savedJob = jobTypeRepository.save(JobType.builder().labelFr(jobLabel).build());
+                   JobType savedJob = jobTypeRepository.save(JobType.builder().labelFr(jobLabel).hidden(hidden).build());
                    Long jobId = savedJob.getId();
                    jobs.put(jobLabel,jobId );
                    jobIdCell.setCellValue(jobId);

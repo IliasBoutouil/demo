@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties
 public class BookServiceApp {
     /*todo :
         X spring security,keycloak / Ldap? ,
