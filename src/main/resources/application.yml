@@ -2,11 +2,15 @@ spring:
   application:
     name: book-service
   datasource:
-    url: jdbc:h2:mem:books-db
-    username: root
+    url: jdbc:postgresql://localhost:5432/credit
+    username: postgres
     password: root
+    driverClassName: org.postgresql.Driver
+    data: classpath:db/data.sql
   jpa:
-    show-sql: true
+    show-sql: false
+    hibernate:
+      ddl-auto: none
   servlet:
     multipart:
       max-file-size: 5MB
@@ -23,3 +27,20 @@ keycloak:
   bearer-only: true
   auth-server-url: http://localhost:8080
   ssl-required: none
+
+grill :
+  loanAmountMax : loan_amount_max
+  loanAmountMin : loan_amount_min
+  annualInsuranceRate : annual_insurance_rate
+  durationMax : duration_max
+  durationMin : duration_min
+  minAnnualInsuranceFeesAmount : min_annual_insurance_fees_amount
+  rate : rate
+  revenueMax : revenue_max
+  revenueMin : revenue_min
+  tva : tva
+  jobTypeId : job_type_fk_id
+  loanTypeId : loan_type_fk_id
+  jobLabelFr : label_fr
+
+

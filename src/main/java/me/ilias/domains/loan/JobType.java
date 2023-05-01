@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @ToString
-public class JobTybe {
+public class JobType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

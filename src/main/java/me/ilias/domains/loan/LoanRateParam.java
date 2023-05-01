@@ -44,5 +44,5 @@ public class LoanRateParam {
     @ManyToOne
     @JoinColumn(name = "JOB_TYPE_FK_ID")
 
-    private JobTybe jobType;
+    private JobType jobType;
 }
